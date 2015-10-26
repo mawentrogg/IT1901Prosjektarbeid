@@ -135,7 +135,7 @@ public class MainApp extends Application {
 			Scene scene = new Scene(page);
 			popupStage.setScene(scene);
 			
-			ReportController controller = loader.getController();
+			WriteReportController controller = loader.getController();
 			controller.setMainApp(this);
 			controller.setUsername(getUsername());
 			controller.setCabinDrop(getCabinList());

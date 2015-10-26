@@ -22,7 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import tools.DBTools;
 
-public class ReportController {
+public class WriteReportController {
 	private String username;
 	private MainApp MainApp;
 
