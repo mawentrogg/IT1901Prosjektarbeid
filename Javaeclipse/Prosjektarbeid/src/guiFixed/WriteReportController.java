@@ -237,7 +237,7 @@ public class WriteReportController {
 		} else if (Double.parseDouble(Wood.getText()) > 20) {
 			Wood.requestFocus();
 			woodErr.setText("That estimate seems a bit high");
-		} else if (dropdown.getValue().equals("")) {
+		} else if (dropdown.getValue() == null) {
 			cabinErr.setText("Venligst velg en koie");
 			dropdown.requestFocus();
 		} else {
