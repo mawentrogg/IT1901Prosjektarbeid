@@ -175,7 +175,7 @@ public class MainApp extends Application {
 try {
 			
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/ShowReportMenu.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/ReportMenu.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 			
 			
