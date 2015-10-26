@@ -120,11 +120,11 @@ public class MainApp extends Application {
 		
 	}
 	
-	public void showReport(){
+	public void showWriteReport(){
 		try {
 			
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/Report.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/WriteReport.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 			
 			

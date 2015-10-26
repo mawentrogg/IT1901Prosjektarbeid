@@ -81,7 +81,7 @@ public class MainMenuController {
 
     @FXML
     void writeReport(ActionEvent event) {
-    	MainApp.showReport();
+    	MainApp.showWriteReport();
 
     }
     @FXML
