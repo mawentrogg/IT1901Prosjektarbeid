@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import rapport.Report;
+import guiFixed.models.Report;
 import tools.DBTools;
 
 public class ReportGetter {

@@ -13,13 +13,13 @@ import java.util.Map;
 
 import com.mysql.jdbc.PreparedStatement;
 
+import guiFixed.models.Report;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
-import rapport.Report;
 import tools.DBTools;
 
 public class SendMessageController {

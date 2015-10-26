@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import rapport.Report;
 import tools.DBTools;
 
 public class ReportGetter {
