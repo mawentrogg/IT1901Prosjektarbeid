@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiFixed.SendMessageController">
+   <children>
+      <TextArea fx:id="message" layoutX="103.0" layoutY="166.0" prefHeight="155.0" prefWidth="394.0" />
+      <ComboBox fx:id="reservationdrop" layoutX="289.0" layoutY="62.0" onAction="#getReservationUserName" prefHeight="31.0" prefWidth="193.0" promptText="Velg reservasjon..." />
+      <ComboBox fx:id="cabindrop" layoutX="103.0" layoutY="62.0" onAction="#setReservationList" prefWidth="150.0" promptText="Velg koie..." />
+      <Text fx:id="writeMessage" layoutX="103.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skriv melding til bruker her: " />
+      <Button fx:id="sendBtn" layoutX="385.0" layoutY="343.0" mnemonicParsing="false" onAction="#sendMessage" text="Send melding" />
+      <Text layoutX="99.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send melding">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="promptempty" fill="RED" layoutX="103.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="messagePrompt" layoutX="121.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>

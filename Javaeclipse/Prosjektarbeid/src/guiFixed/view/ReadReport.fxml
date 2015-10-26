@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiFixed.ReportGetter.java">
+   <children>
+      <Label layoutX="39.0" layoutY="164.0" text="Comments:" />
+      <Label fx:id="Comments" layoutX="39.0" layoutY="192.0" text="NO COMMENT MADE" />
+      <Label fx:id="Missing" layoutX="345.0" layoutY="192.0" text="NOTHING MISSING" />
+      <Label layoutX="345.0" layoutY="164.0" text="Missing:" />
+      <Label fx:id="Cabin" layoutX="39.0" layoutY="52.0" text="Cabin: " />
+      <Label fx:id="Date" layoutX="457.0" layoutY="18.0" text="Date:" />
+      <Label fx:id="User" layoutX="39.0" layoutY="18.0" text="User: " />
+      <Label fx:id="Logs" layoutX="331.0" layoutY="52.0" text="Logs:" />
+   </children>
+</AnchorPane>

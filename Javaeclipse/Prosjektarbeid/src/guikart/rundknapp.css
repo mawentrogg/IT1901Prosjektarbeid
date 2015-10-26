@@ -1,0 +1,5 @@
+.button {
+-fx-background-radius: 100px;
+-fx-background-color: transparent;
+-fx-cursor: hand;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.PasswordField?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiFixed.LoginController">
+   <children>
+      <Pane layoutX="210.0" layoutY="260.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="Username" layoutX="26.0" layoutY="14.0" promptText="Username" />
+            <PasswordField fx:id="Password" layoutX="26.0" layoutY="53.0" promptText="Password" />
+            <Button layoutX="26.0" layoutY="100.0" mnemonicParsing="false" onAction="#Login" text="Login" />
+            <Button layoutX="108.0" layoutY="100.0" mnemonicParsing="false" onAction="#createNewUser" text="New User" />
+         </children>
+      </Pane>
+      <Pane layoutX="20.0" layoutY="20.0" prefHeight="0.0" prefWidth="0.0">
+         <effect>
+            <ColorAdjust brightness="-0.38" contrast="0.38" hue="-0.1" />
+         </effect>
+      </Pane>
+      <Text layoutX="160.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen til oss! Skriv inn brukernavn og passord. For å registrere deg som ny bruker, trykk på &quot;Ny bruker&quot; knappen nedenfor." textAlignment="CENTER" wrappingWidth="283.740234375" />
+      <Text layoutX="228.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen!" textAlignment="CENTER" wrappingWidth="164.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="usernotfound" fill="#fc0000" layoutX="444.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.6708984375" />
+      <Text fx:id="wrongpassword" fill="RED" layoutX="444.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.6708984375" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiFixed.MainMenuController">
+   <children>
+      <Pane layoutY="1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button layoutX="445.0" layoutY="288.0" mnemonicParsing="false" onAction="#returnToLogin" text="Return to Login" />
+            <Button layoutX="46.0" layoutY="165.0" mnemonicParsing="false" onAction="#showPrognosis" text="Show Prognosis" />
+            <Button layoutX="46.0" layoutY="233.0" mnemonicParsing="false" onAction="#showReportMenu" text="Show Reports" />
+            <Label layoutX="183.0" layoutY="22.0" text="Main Menu" />
+            <Text layoutX="33.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, admin">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Button layoutX="259.0" layoutY="165.0" mnemonicParsing="false" onAction="#showMessageMenu" text="Send messages" />
+         </children></Pane>
+   </children>
+</AnchorPane>

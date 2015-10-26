@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiFixed.NewUserController">
+   <children>
+      <TextField fx:id="newName" layoutX="181.0" layoutY="97.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField fx:id="newEpost" layoutX="182.0" layoutY="139.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField fx:id="newPhone" layoutX="182.0" layoutY="180.0" prefHeight="25.0" prefWidth="166.0" />
+      <Label layoutX="140.0" layoutY="101.0" text="Navn:" />
+      <Label layoutX="140.0" layoutY="143.0" text="Epost:" />
+      <Label layoutX="128.0" layoutY="184.0" text="Telefon:" />
+      <TextField fx:id="newUsername" layoutX="182.0" layoutY="219.0" prefHeight="25.0" prefWidth="166.0" />
+      <PasswordField fx:id="newPass1" layoutX="181.0" layoutY="266.0" prefHeight="25.0" prefWidth="166.0" />
+      <PasswordField fx:id="newPass2" layoutX="182.0" layoutY="305.0" prefHeight="25.0" prefWidth="166.0" />
+      <Label layoutX="108.0" layoutY="223.0" text="Brukernavn:" />
+      <Label layoutX="126.0" layoutY="270.0" text="Passord:" />
+      <Label layoutX="92.0" layoutY="309.0" text="Gjenta passord:" />
+      <Button layoutX="206.0" layoutY="366.0" mnemonicParsing="false" onAction="#registerNewUser" text="Registrer ny bruker" />
+      <Label layoutX="172.0" layoutY="35.0" text="Registrer ny bruker">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
