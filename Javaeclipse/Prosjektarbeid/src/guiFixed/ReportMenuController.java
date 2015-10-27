@@ -20,7 +20,6 @@ import tools.DBTools;
 public class ReportMenuController {
 	
 	private List<Report> reportList;
-	private Report Report;
 	
 	private MainApp mainApp;
 	private String Username;
@@ -45,6 +44,11 @@ public class ReportMenuController {
     
     @FXML
     private Text missingPrompt;
+    
+    @FXML
+    void closePopup(){
+    	mainApp.closePopup2();
+    }
 
     @FXML
     void displayReport(ActionEvent event) {
@@ -53,9 +57,8 @@ public class ReportMenuController {
     	userLabel.setText("");
     	numberOfLogsLabel.setText("");
     	missingPrompt.setText("");
-		List<Report> reports = DBTools.getReports();
 		Report chosenCabinReport;
-		for (Report report : reports){
+		for (Report report : reportList){
 			if(report.getcabin() == getCabinID()){
 				chosenCabinReport = report;
 				StringBuilder builder = new StringBuilder();
@@ -122,7 +125,7 @@ public class ReportMenuController {
 
 	}
 	public void setReportList(){
-		reportList = DBTools.getReports();
+		reportList = DBTools.getLastReports();
 	}
 
 

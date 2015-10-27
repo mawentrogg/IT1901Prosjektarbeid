@@ -4,14 +4,11 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import com.mysql.jdbc.PreparedStatement;
-import com.sun.crypto.provider.RSACipher;
+
 
 import guiFixed.models.woodlogPrognosis;
 import javafx.collections.FXCollections;
@@ -24,7 +21,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
-import tools.DBTools;
 
 public class PrognoseController {
 	

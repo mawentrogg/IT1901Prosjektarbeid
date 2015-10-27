@@ -382,7 +382,7 @@ public class DBTools
 		}
 	}
 	//Gets the latest report from each cabin.
-	public static List<Report> getReports(){
+	public static List<Report> getLastReports(){
 		try{
 			Connection con = DBTools.quickConnect();
 			Statement statement = con.createStatement();

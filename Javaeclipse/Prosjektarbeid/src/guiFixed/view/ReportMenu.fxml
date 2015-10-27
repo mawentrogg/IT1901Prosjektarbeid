@@ -14,11 +14,12 @@
       <Label layoutX="82.0" layoutY="201.0" text="Mangler:" />
       <TextArea fx:id="missingField" editable="false" layoutX="82.0" layoutY="218.0" prefHeight="161.0" prefWidth="271.0" />
       <Label layoutX="82.0" layoutY="135.0" text="Bruker:" />
-      <Label fx:id="userLabel" layoutX="129.0" layoutY="135.0" />
+      <Label fx:id="userLabel" layoutX="129.0" layoutY="135.0" prefHeight="17.0" prefWidth="83.0" />
       <Label layoutX="216.0" layoutY="135.0" text="Dato:" />
       <Label fx:id="dateLabel" layoutX="258.0" layoutY="135.0" />
       <Label layoutX="374.0" layoutY="282.0" text="Antall m2 ved gjenværende:" />
       <Label fx:id="numberOfLogsLabel" layoutX="531.0" layoutY="282.0" prefHeight="17.0" prefWidth="47.0" />
       <Text fx:id="missingPrompt" layoutX="31.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button layoutX="552.0" layoutY="14.0" mnemonicParsing="false" onAction="#closePopup" text="Tilbake" />
    </children>
 </AnchorPane>
