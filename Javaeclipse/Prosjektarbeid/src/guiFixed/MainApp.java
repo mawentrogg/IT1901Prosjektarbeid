@@ -189,6 +189,7 @@ try {
 			ReportMenuController controller = loader.getController();
 			controller.setMainApp(this);
 			controller.setUsername(getUsername());
+			controller.setCabinList(getCabinList());
 			
 			popupStage2.showAndWait();
 			
