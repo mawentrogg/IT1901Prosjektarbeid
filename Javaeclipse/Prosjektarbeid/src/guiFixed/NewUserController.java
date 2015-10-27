@@ -41,6 +41,12 @@ public class NewUserController {
 
 	@FXML
 	private PasswordField newPass2;
+	
+	@FXML
+	public void closePopup()
+	{
+		this.MainApp.showLogin();
+	}
 
 	@FXML
 	public void registerNewUser() {
@@ -65,11 +71,15 @@ public class NewUserController {
 			{
 				System.out.println("empty name");
 			}
+			else if(isNum(newName.getText()))
+			{
+				System.out.println("Invalid character(s) in name");
+			}
 			else if(newEpost.getText().equals("") || !validEmail())
 			{
 				System.out.println("invalid email");
 			}
-			else if(newPhone.getText().length() != 8 || newPhone.getText().equals(""))
+			else if(newPhone.getText().length() != 8 || newPhone.getText().equals("") || !isNum(newPhone.getText()))
 			{
 				System.out.println("invalid phonenumber");
 			}
@@ -94,12 +104,33 @@ public class NewUserController {
 		}
 	}
 	
+	private boolean isNum(String a)
+	{
+		try
+		{
+			Double.parseDouble(a);
+			return true;
+		}
+		catch(NumberFormatException e)
+		{
+			return false;
+		}
+	}
+	
+	private boolean noNums(String a)
+	{
+		return true;
+	}
+	
 	private boolean validEmail()
 	{
 		String[] temp = newEpost.getText().split("@");
 		if(temp.length == 2 && temp[1].split("\\.").length > 1)
 		{
-			return true;
+			if(!temp[1].split("\\.")[0].equals(""))
+			{
+				return true;
+			}
 		}
 		return false;
 	}
