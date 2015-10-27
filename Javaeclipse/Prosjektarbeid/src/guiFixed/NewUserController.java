@@ -44,32 +44,100 @@ public class NewUserController {
 
 	@FXML
 	public void registerNewUser() {
-		if (checkPasswordsMatch()&&checkUsernameValidity())
-			uploadToDatabase();
-		this.MainApp.showLogin();
+		Connection con = DBTools.quickConnect();
 
+		String insertToTable = "INSERT INTO Users(Username,Password,Name,Phone,Email,ADMIN) VALUES" + "(?,?,?,?,?,?)";
+		try {
+			PreparedStatement report = (PreparedStatement) con.prepareStatement(insertToTable);
+			if(!checkUsernameValidity())
+			{
+				System.out.println("invalid username");
+			}
+			else if(!checkPasswordsMatch())
+			{
+				System.out.println("Passwords do not match");
+			}
+			else if(!validPassLen())
+			{
+				System.out.println("Passwords need to be between 4 and 15 characters");
+			}
+			else if(newName.getText().equals(""))
+			{
+				System.out.println("empty name");
+			}
+			else if(newEpost.getText().equals("") || !validEmail())
+			{
+				System.out.println("invalid email");
+			}
+			else if(newPhone.getText().length() != 8 || newPhone.getText().equals(""))
+			{
+				System.out.println("invalid phonenumber");
+			}
+			else
+			{
+				report.setString(1, newUsername.getText());
+				report.setString(2, newPass1.getText());
+				report.setString(3, newName.getText());
+				report.setString(4, newPhone.getText());
+				report.setString(5, newEpost.getText());
+				report.setBoolean(6, false); // Maa settes til true for aa lage admin-bruker
+				report.executeUpdate();
+				con.close();
+				this.MainApp.showLogin();
+				System.out.println("Success");
+			}
+		}
+
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private boolean validEmail()
+	{
+		String[] temp = newEpost.getText().split("@");
+		if(temp.length == 2 && temp[1].split("\\.").length > 1)
+		{
+			return true;
+		}
+		return false;
 	}
 
 	private boolean checkPasswordsMatch() {
-		if (newPass1.getText().equals(newPass2.getText())) {
+		if (newPass1.getText().equals(newPass2.getText())) 
+		{
 			return true;
-		} else {
+		}
+		return false;
+	}
+	
+	private boolean validPassLen()
+	{
+		if(newPass1.getText().length() > 15 || newPass1.getText().length() < 4)
+		{
 			return false;
 		}
+		return true;
 	}
 
 	private boolean checkUsernameValidity() {
+		if(newUsername.getText().equals(""))
+		{
+			return false;
+		}
 		Connection con = DBTools.quickConnect();
 		ResultSet resultSet = DBTools.getTableValues(con, "Users", "Username");
 		try {
 			while (resultSet.next()) {
-				if (!newName.getText().equals(resultSet.toString()))
-					;
+				if (newUsername.getText().toLowerCase().equals(resultSet.getString(1).toLowerCase()))
 				{
-					return true;
+					System.out.println("Hello error my old friend");
+					return false;
 				}
 			}
-			return false;
+			System.out.println("true");
+			return true;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -84,16 +152,22 @@ public class NewUserController {
 		String insertToTable = "INSERT INTO Users(Username,Password,Name,Phone,Email,ADMIN) VALUES" + "(?,?,?,?,?,?)";
 		try {
 			PreparedStatement report = (PreparedStatement) con.prepareStatement(insertToTable);
-
-			report.setString(1, newUsername.getText());
-			report.setString(2, newPass1.getText());
-			report.setString(3, newName.getText());
-			report.setString(4, newPhone.getText());
-			report.setString(5, newEpost.getText());
-			report.setBoolean(6, false); // Må settes til true for å lage admin-bruker
-			report.executeUpdate();
-			con.close();
-			System.out.println("Success");
+			if(newName.getText().equals(""))
+			{
+				System.out.println("empty name");
+			}
+			else
+			{
+				report.setString(1, newUsername.getText());
+				report.setString(2, newPass1.getText());
+				report.setString(3, newName.getText());
+				report.setString(4, newPhone.getText());
+				report.setString(5, newEpost.getText());
+				report.setBoolean(6, false); // Maa settes til true for aa lage admin-bruker
+				report.executeUpdate();
+				con.close();
+				System.out.println("Success");
+			}
 		}
 
 		catch (SQLException e) {
