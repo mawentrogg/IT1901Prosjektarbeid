@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiFixed.SendMessageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiFixed.SendMessageController">
    <children>
       <TextArea fx:id="message" layoutX="103.0" layoutY="166.0" prefHeight="155.0" prefWidth="394.0" />
       <ComboBox fx:id="reservationdrop" layoutX="289.0" layoutY="62.0" onAction="#getReservationUserName" prefHeight="31.0" prefWidth="193.0" promptText="Velg reservasjon..." />
@@ -20,5 +20,6 @@
       </Text>
       <Text fx:id="promptempty" fill="RED" layoutX="103.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="messagePrompt" layoutX="121.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button layoutX="103.0" layoutY="347.0" mnemonicParsing="false" onAction="#returnToMain" text="Tilbake" />
    </children>
 </AnchorPane>

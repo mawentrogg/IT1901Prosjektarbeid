@@ -272,5 +272,10 @@ public class SendMessageController {
 			return null;
 		}
 	}
+	
+	@FXML
+	public void returnToMain(){
+		mainApp.closePopup();
+	}
 
 }

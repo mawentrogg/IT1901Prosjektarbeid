@@ -19,10 +19,13 @@ import tools.DBTools;
 
 public class ReportMenuController {
 	
-	private List<Report> reportList;
-	
 	private MainApp mainApp;
 	private String Username;
+	
+	@FXML
+	public void Initialize(){
+    	usernameText.setText("Hei, velg en koie for å hente ut rapport," +Username);
+	}
 
     @FXML
     private ComboBox<String> cabinDropDown;
@@ -46,6 +49,9 @@ public class ReportMenuController {
     private Text missingPrompt;
     
     @FXML
+    private Text usernameText;
+    
+    @FXML
     void closePopup(){
     	mainApp.closePopup2();
     }
@@ -58,7 +64,9 @@ public class ReportMenuController {
     	numberOfLogsLabel.setText("");
     	missingPrompt.setText("");
 		Report chosenCabinReport;
-		for (Report report : reportList){
+		
+		//TODO Add date to reportlist, to actually get the date shown.
+		for (Report report : DBTools.getLastReports()){
 			if(report.getcabin() == getCabinID()){
 				chosenCabinReport = report;
 				StringBuilder builder = new StringBuilder();
@@ -123,9 +131,6 @@ public class ReportMenuController {
 	public void setCabinList(ArrayList<String> arrayList) {
 		cabinDropDown.getItems().addAll(arrayList);
 
-	}
-	public void setReportList(){
-		reportList = DBTools.getLastReports();
 	}
 
 

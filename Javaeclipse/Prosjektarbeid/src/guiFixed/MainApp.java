@@ -187,6 +187,7 @@ try {
 			popupStage2.setScene(scene);
 			
 			ReportMenuController controller = loader.getController();
+			controller.Initialize();
 			controller.setMainApp(this);
 			controller.setUsername(getUsername());
 			controller.setCabinList(getCabinList());
