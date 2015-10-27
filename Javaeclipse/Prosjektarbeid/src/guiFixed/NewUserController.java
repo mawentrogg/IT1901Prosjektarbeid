@@ -50,7 +50,9 @@ public class NewUserController {
 	}
 
 	@FXML
-	public void registerNewUser() {
+	public void registerNewUser() 
+	{
+//		TODO add lables/text for each print
 		Connection con = DBTools.quickConnect();
 
 		String insertToTable = "INSERT INTO Users(Username,Password,Name,Phone,Email,ADMIN) VALUES" + "(?,?,?,?,?,?)";
