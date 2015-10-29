@@ -42,6 +42,8 @@ public class MainApp extends Application {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+	
 
 	@Override
 	public void start(Stage primaryStage) {

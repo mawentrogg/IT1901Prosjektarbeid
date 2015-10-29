@@ -27,6 +27,13 @@ public class DBTools
 	
 	
 //	=================================================== CONECTORS ================================================================
+	/**
+	 * 
+	 * @param hostName: 
+	 * @param username
+	 * @param password
+	 * @return Connection con
+	 */
 	public static Connection connectToServer(String hostName, String username, String password)
 	{
 		try 
