@@ -76,10 +76,10 @@
       <TextField fx:id="Wood" layoutX="240.0" layoutY="147.0" onKeyTyped="#checkWood" prefHeight="31.0" prefWidth="72.0" promptText="høyde i m" />
       <Label layoutX="43.0" layoutY="154.0" text="Fyll inn hvor mye ved det er igjen" />
       <Label layoutX="41.0" layoutY="403.0" text="Skriv her om du har andre kommentarer om koien, om noe er ødelagt, etc. " />
-      <TextArea fx:id="textArea" layoutX="42.0" layoutY="427.0" prefHeight="200.0" prefWidth="520.0" />
+      <TextArea fx:id="textArea" layoutX="42.0" layoutY="427.0" onKeyTyped="#checkInputLen" prefHeight="200.0" prefWidth="520.0" />
       <Label fx:id="woodErr" layoutX="240.0" layoutY="188.0" textFill="#e71e1e" />
       <Label fx:id="dateWarning" layoutX="107.0" layoutY="112.0" textFill="#e71e1e" />
       <Label fx:id="cabinErr" layoutX="363.0" layoutY="64.0" textFill="#e71e1e" />
-      <Label fx:id="textTest" layoutX="107.0" layoutY="444.0" prefHeight="182.0" prefWidth="434.0" />
+      <Label fx:id="textErr" layoutX="43.0" layoutY="627.0" textFill="#e71e1e" />
    </children>
 </AnchorPane>

@@ -3,6 +3,7 @@ package guiFixed;
 import java.util.List;
 
 import com.mysql.jdbc.PreparedStatement;
+import com.sun.corba.se.impl.oa.poa.ActiveObjectMap.Key;
 
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class WriteReportController {
 	private String username;
 	private MainApp MainApp;
 
-	private String comments;
+	private String comments = "";
 
 	private String commodities;
 
@@ -120,6 +121,9 @@ public class WriteReportController {
 
 	@FXML
 	private Label cabinErr;
+	
+	@FXML
+	private Label textErr;
 
 	private List<CheckBox> checkboxes = new ArrayList<>();
 
@@ -226,13 +230,41 @@ public class WriteReportController {
 
 	@FXML
 	private Label textTest;
+	
+	@FXML
+	private void checkInputLen()
+	//TODO Fix this so it does not get called twice! (but still works)
+	{
+		System.out.println(textArea.getText().length());
+		if(textArea.getText().length() >= 255)
+		{
+			textArea.setText(comments);
+//			textArea.cancelEdit();
+			textArea.end();
+			textErr.setText("maximum 255characters");
+		}
+		else
+		{
+			comments = textArea.getText();
+			textErr.setText("");
+		}
+	}
 
 	@FXML
 	public void sendReport() {
+		dateWarning.setText("");
+		woodErr.setText("");
+		cabinErr.setText("");
 		if (date.getValue() == null) {
 			dateWarning.setText("Please choose a date");
 			date.requestFocus();
-		} else if (Wood.getText().equals(null) || !isNumber(Wood.getText())) {
+//			java.util.Date.from(date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()).getTime())
+		} else if(java.util.Date.from(date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()).getTime() > System.currentTimeMillis())
+			{
+			dateWarning.setText("We've got to go back Marty, back to the future!");
+			date.requestFocus();
+		}else if (Wood.getText().equals(null) || !isNumber(Wood.getText())) {
+			woodErr.setText("Please fill in the amount of remaining wood");
 			Wood.requestFocus();
 		} else if (Double.parseDouble(Wood.getText()) > 20) {
 			Wood.requestFocus();
